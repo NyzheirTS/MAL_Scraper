@@ -4,8 +4,8 @@ import requests
 import time
 import csv
 
-# id = 1
-id = 45713
+id = 1
+
 
 
 def id_name_Pair():
@@ -37,7 +37,7 @@ def id_name_Pair():
                 eng_name = soup2.find(class_='title-english title-inherit').get_text().strip()
                 print(id, eng_name)
                 data = [id, eng_name]
-            else: # If no english title look for generic title
+            else:  # If no english title look for generic title
                 name = soup2.find(class_='title-name h1_bold_none').get_text().strip()
                 print(id, name)
                 data = [id, name]
@@ -52,7 +52,7 @@ def id_name_Pair():
             write.writerow(data)
 
 
-anime_limit = 55000
+anime_limit = 56501
 while id <= anime_limit:
     id_name_Pair()
     time.sleep(3)
