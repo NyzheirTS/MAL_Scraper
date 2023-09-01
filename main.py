@@ -26,7 +26,7 @@ def id_name_Pair():
 
     # In case of rate limiting
     if page.status_code == 403 | page.status_code == 405:
-        time.sleep(600)
+        time.sleep(600) # 10 mins
         print("WTF DATA LIMIT OMG !!!!!!")
     else:
         soup = BeautifulSoup(page.content, "html.parser")
